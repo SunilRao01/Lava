@@ -1,10 +1,10 @@
 #include <iostream>
 #include <GL/glew.h>
 #include "Display.h"
-#include "Shader.h"
+#include "shader.h"
 #include "mesh.h"
 #include "texture.h"
-
+#include "transform.h"
 
 int main(int argc, char **argv)
 {
@@ -29,10 +29,21 @@ int main(int argc, char **argv)
 	Mesh twinpeaksMesh(twinpeaksVertices, sizeof(twinpeaksVertices) / sizeof(twinpeaksVertices[0]));
 	Texture twinpeaksTexture("./res/t_twinpeaks.jpg", false);
 
+	Transform transform;
+	float counter = 0.0f;
+
 	while (!display.IsClosed())
 	{
 		display.Clear(0.5f, 0.6f, 0.7f, 1.0f);
 		
+		float sinCounter = sinf(counter);
+		float cosCounter = cosf(counter);
+
+		transform.GetPosition().x = sinCounter;
+		transform.GetRotation().z = counter;
+		transform.SetScale(glm::vec3(cosCounter, cosCounter, cosCounter));
+
+		shader.Update(transform);
 		shader.Bind();
 
 		twinpeaksTexture.Bind(0);
@@ -40,8 +51,9 @@ int main(int argc, char **argv)
 
 		sonicSprite.Bind(0);
 		sonicMesh.Draw();
-
+		
 		display.Update();
+		counter += 0.0005f; // By processing speed, use timer in future
 	}
 	
 	exit(0);

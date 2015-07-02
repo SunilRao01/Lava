@@ -25,6 +25,9 @@
     <ClCompile Include="shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="transform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mesh.h" />
@@ -32,5 +35,6 @@
     <ClInclude Include="include\stb_image.h" />
     <ClInclude Include="display.h" />
     <ClInclude Include="shader.h" />
+    <ClInclude Include="transform.h" />
   </ItemGroup>
 </Project>
