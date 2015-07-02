@@ -8,7 +8,7 @@
 
 int main(int argc, char **argv)
 {
-	Display display(800, 600, "Hello World");
+	Display display(800, 600, "Test");
 
 	// Set up basic diffuse shader for textures
 	Shader shader("./res/basicShader");
