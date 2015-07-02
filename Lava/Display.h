@@ -2,7 +2,7 @@
 #define DISPLAY_H
 
 #include <string>
-#include <sdl2\SDL.h>
+#include <SDL2\SDL.h>
 #include <iostream>
 #include <GL\glew.h>
 
@@ -20,7 +20,7 @@ public:
 protected:
 private:
 	Display(const Display &other) {}
-	Display &operator=(const Display &other){}
+	Display &operator=(const Display &other) {}
 
 	SDL_Window *m_window;
 	SDL_GLContext m_glContext;

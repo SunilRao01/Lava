@@ -82,15 +82,15 @@
     <ClCompile Include="display.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mesh.cpp" />
+    <ClCompile Include="include\stb_image.c" />
     <ClCompile Include="shader.cpp" />
-    <ClCompile Include="stb_image.c" />
     <ClCompile Include="texture.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Display.h" />
+    <ClInclude Include="display.h" />
     <ClInclude Include="mesh.h" />
-    <ClInclude Include="Shader.h" />
-    <ClInclude Include="stb_image.h" />
+    <ClInclude Include="include\stb_image.h" />
+    <ClInclude Include="shader.h" />
     <ClInclude Include="texture.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

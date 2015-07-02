@@ -3,8 +3,8 @@
 #include <string>
 #include <GL\glew.h>
 #include <iostream>
-#include "stb_image.h"
 #include <cassert>
+#include <stb_image.h>
 
 class Texture
 {
