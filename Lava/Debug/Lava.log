@@ -1,10 +1,11 @@
-﻿Build started 7/1/2015 11:00:48 PM.
-     1>Project "C:\Users\Sunil\Documents\Code\OpenGL\OpenGL Tutorial Project\Lava\Lava\Lava.vcxproj" on node 2 (Build target(s)).
+﻿Build started 7/1/2015 11:06:32 PM.
+     1>Project "C:\Users\Sunil\Documents\Code\OpenGL\OpenGL Tutorial Project\Lava\Lava\Lava.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt display.cpp mesh.cpp shader.cpp texture.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt display.cpp main.cpp mesh.cpp shader.cpp texture.cpp
          texture.cpp
          shader.cpp
          mesh.cpp
+         main.cpp
          display.cpp
          Generating Code...
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt stb_image.c
@@ -24,9 +25,10 @@
          Debug\shader.obj
          Debug\stb_image.obj
          Debug\texture.obj
+     1>MSVCRTD.lib(cinitexe.obj) : warning LNK4098: defaultlib 'msvcrt.lib' conflicts with use of other libs; use /NODEFAULTLIB:library
          Lava.vcxproj -> C:\Users\Sunil\Documents\Code\OpenGL\OpenGL Tutorial Project\Lava\Debug\Lava.exe
-     1>Done Building Project "C:\Users\Sunil\Documents\Code\OpenGL\OpenGL Tutorial Project\Lava\Lava\Lava.vcxproj" (Build target(s)).
+     1>Done Building Project "C:\Users\Sunil\Documents\Code\OpenGL\OpenGL Tutorial Project\Lava\Lava\Lava.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.98
+Time Elapsed 00:00:02.56
