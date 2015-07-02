@@ -5,9 +5,12 @@
 #include "mesh.h"
 #include "texture.h"
 #include "transform.h"
+#include <SDL2\SDL.h>
 
 int main(int argc, char **argv)
 {
+	std::cout << "Application has started..." << std::endl;
+	
 	Display display(800, 600, "Test");
 
 	// Set up basic diffuse shader for textures
@@ -51,6 +54,8 @@ int main(int argc, char **argv)
 
 		sonicSprite.Bind(0);
 		sonicMesh.Draw();
+
+		
 		
 		display.Update();
 		counter += 0.0005f; // By processing speed, use timer in future

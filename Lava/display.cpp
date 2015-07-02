@@ -57,6 +57,18 @@ void Display::Update()
 
 	while (SDL_PollEvent(&e))
 	{
+		// Keyboard input example
+		switch (e.type)
+		{
+		case SDL_KEYDOWN:
+			std::cout << "Key press detected!" << std::endl;
+			break;
+		case SDL_KEYUP:
+			std::cout << "Key release detected!" << std::endl;
+		default:
+			break;
+		}
+
 		if (e.type == SDL_QUIT)
 		{
 			m_isClosed = true;
