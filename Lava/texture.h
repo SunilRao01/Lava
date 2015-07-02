@@ -9,7 +9,7 @@
 class Texture
 {
 public:
-	Texture(const std::string &fileName);
+	Texture(const std::string &fileName, bool isSprite);
 
 	void Bind(unsigned int unit);
 
@@ -20,5 +20,6 @@ private:
 	Texture &operator= (const Texture &rhs) {}
 
 	GLuint m_texture;
+	bool isSprite;
 };
 
