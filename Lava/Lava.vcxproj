@@ -80,7 +80,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="display.cpp" />
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="mesh.cpp" />
     <ClCompile Include="shader.cpp" />
     <ClCompile Include="stb_image.c" />
