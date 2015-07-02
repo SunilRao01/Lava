@@ -1,11 +1,32 @@
-﻿Build started 7/1/2015 10:10:28 PM.
-     1>Project "C:\Users\Sunil\Documents\Code\OpenGL\OpenGL Tutorial Project\Lava\Lava\Lava.vcxproj" on node 2 (ClCompile target(s)).
+﻿Build started 7/1/2015 11:00:48 PM.
+     1>Project "C:\Users\Sunil\Documents\Code\OpenGL\OpenGL Tutorial Project\Lava\Lava\Lava.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
-         Skipping... (no relevant changes detected)
-         main.cpp
-     1>Done Building Project "C:\Users\Sunil\Documents\Code\OpenGL\OpenGL Tutorial Project\Lava\Lava\Lava.vcxproj" (ClCompile target(s)).
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt display.cpp mesh.cpp shader.cpp texture.cpp
+         texture.cpp
+         shader.cpp
+         mesh.cpp
+         display.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt stb_image.c
+         stb_image.c
+     1>c:\users\sunil\documents\code\opengl\opengl tutorial project\lava\lava\stb_image.c(300): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>c:\users\sunil\documents\code\opengl\opengl tutorial project\lava\lava\stb_image.c(362): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>c:\users\sunil\documents\code\opengl\opengl tutorial project\lava\lava\stb_image.c(400): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>c:\users\sunil\documents\code\opengl\opengl tutorial project\lava\lava\stb_image.c(4293): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : see declaration of 'fopen'
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Sunil\Documents\Code\OpenGL\OpenGL Tutorial Project\Lava\Debug\Lava.exe" /INCREMENTAL /NOLOGO /LIBPATH:.\lib glew32.lib glew32s.lib SDL2.lib SDL2main.lib SDL2test.lib OpenGL32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Sunil\Documents\Code\OpenGL\OpenGL Tutorial Project\Lava\Debug\Lava.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Sunil\Documents\Code\OpenGL\OpenGL Tutorial Project\Lava\Debug\Lava.lib" /MACHINE:X86 Debug\display.obj
+         Debug\main.obj
+         Debug\mesh.obj
+         Debug\shader.obj
+         Debug\stb_image.obj
+         Debug\texture.obj
+         Lava.vcxproj -> C:\Users\Sunil\Documents\Code\OpenGL\OpenGL Tutorial Project\Lava\Debug\Lava.exe
+     1>Done Building Project "C:\Users\Sunil\Documents\Code\OpenGL\OpenGL Tutorial Project\Lava\Lava\Lava.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.11
+Time Elapsed 00:00:01.98

@@ -17,6 +17,8 @@ int main(int argc, char **argv)
 	Shader shader("./res/basicShader");
 	Texture texture("./res/t_twinpeaks.jpg");
 
+	// Test 
+
 	while (!display.IsClosed())
 	{
 		display.Clear(0.5f, 0.6f, 0.7f, 1.0f);
