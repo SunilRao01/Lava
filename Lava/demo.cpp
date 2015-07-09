@@ -1,6 +1,6 @@
 #include <iostream>
 #include <GL/glew.h>
-#include "Display.h"
+#include "display.h"
 #include "shader.h"
 #include "mesh.h"
 #include "texture.h"
