@@ -3,10 +3,10 @@
 
 Mesh::Mesh(Vertex *vertices, unsigned int numVertices)
 {
-	m_drawCount = numVertices;
+	drawCount = numVertices;
 
-	glGenVertexArrays(1, &m_vertexArrayObject);
-	glBindVertexArray(m_vertexArrayObject);
+	glGenVertexArrays(1, &vertexArrayObject);
+	glBindVertexArray(vertexArrayObject);
 
 	std::vector<glm::vec3> positions;
 	std::vector<glm::vec2> texCoords;
@@ -21,15 +21,15 @@ Mesh::Mesh(Vertex *vertices, unsigned int numVertices)
 	}
 
 	// Buffer 1
-	glGenBuffers(NUM_BUFFERS, m_vertexArrayBuffers);
-	glBindBuffer(GL_ARRAY_BUFFER, m_vertexArrayBuffers[POSITION_VB]);
+	glGenBuffers(NUM_BUFFERS, vertexArrayBuffers);
+	glBindBuffer(GL_ARRAY_BUFFER, vertexArrayBuffers[POSITION_VB]);
 	glBufferData(GL_ARRAY_BUFFER, numVertices * sizeof(positions[0]), &positions[0], GL_STATIC_DRAW);
 	
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0 /*Skip pixels*/, 0);
 
 	// Buffer 2
-	glBindBuffer(GL_ARRAY_BUFFER, m_vertexArrayBuffers[TEXTURECOORDINATES_VB]);
+	glBindBuffer(GL_ARRAY_BUFFER, vertexArrayBuffers[TEXTURECOORDINATES_VB]);
 	glBufferData(GL_ARRAY_BUFFER, numVertices * sizeof(texCoords[0]), &texCoords[0], GL_STATIC_DRAW);
 
 	glEnableVertexAttribArray(1);
@@ -41,14 +41,14 @@ Mesh::Mesh(Vertex *vertices, unsigned int numVertices)
 
 Mesh::~Mesh()
 {
-	glCreateVertexArrays(1, &m_vertexArrayObject);
+	glCreateVertexArrays(1, &vertexArrayObject);
 }
 
 void Mesh::Draw()
 {
-	glBindVertexArray(m_vertexArrayObject);
+	glBindVertexArray(vertexArrayObject);
 
-	glDrawArrays(GL_POLYGON, 0, m_drawCount);
+	glDrawArrays(GL_POLYGON, 0, drawCount);
 
 	glBindVertexArray(0);
 }

@@ -54,8 +54,6 @@ int main(int argc, char **argv)
 
 		sonicSprite.Bind(0);
 		sonicMesh.Draw();
-
-		
 		
 		display.Update();
 		counter += 0.0005f; // By processing speed, use timer in future

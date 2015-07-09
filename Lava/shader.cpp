@@ -6,26 +6,26 @@ static GLuint CreateShader(const std::string &text, GLenum shaderType);
 
 Shader::Shader(const std::string &fileName)
 {
-	m_program = glCreateProgram();
-	m_shaders[0] = CreateShader(LoadShader(fileName + ".vs"), GL_VERTEX_SHADER);
-	m_shaders[1] = CreateShader(LoadShader(fileName + ".fs"), GL_FRAGMENT_SHADER);
+	program = glCreateProgram();
+	shaders[0] = CreateShader(LoadShader(fileName + ".vs"), GL_VERTEX_SHADER);
+	shaders[1] = CreateShader(LoadShader(fileName + ".fs"), GL_FRAGMENT_SHADER);
 
 	// Attach all the shaders to the program
 	for (unsigned int i = 0; i < NUM_SHADERS; i++)
 	{
-		glAttachShader(m_program, m_shaders[i]);
+		glAttachShader(program, shaders[i]);
 	}
 
-	glBindAttribLocation(m_program, 0, "position");
-	glBindAttribLocation(m_program, 1, "texCoord");
+	glBindAttribLocation(program, 0, "position");
+	glBindAttribLocation(program, 1, "texCoord");
 
-	glLinkProgram(m_program);
-	CheckShaderError(m_program, GL_LINK_STATUS, true, "Error: Shader program failed to link!");
+	glLinkProgram(program);
+	CheckShaderError(program, GL_LINK_STATUS, true, "Error: Shader program failed to link!");
 
-	glValidateProgram(m_program);
-	CheckShaderError(m_program, GL_VALIDATE_STATUS, true, "Error: Shader program failed to validate!");
+	glValidateProgram(program);
+	CheckShaderError(program, GL_VALIDATE_STATUS, true, "Error: Shader program failed to validate!");
 
-	m_uniforms[TRANFORM_U] = glGetUniformLocation(m_program, "transform"); // name of variable from shader
+	uniforms[TRANFORM_U] = glGetUniformLocation(program, "transform"); // name of variable from shader
 }
 
 Shader::~Shader()
@@ -33,23 +33,23 @@ Shader::~Shader()
 	// Delete the shaders
 	for (unsigned int i = 0; i < NUM_SHADERS; i++)
 	{
-		glDetachShader(m_program, m_shaders[i]);
-		glDeleteShader(m_shaders[i]);
+		glDetachShader(program, shaders[i]);
+		glDeleteShader(shaders[i]);
 	}
 
-	glDeleteProgram(m_program);
+	glDeleteProgram(program);
 }
 
 void Shader::Bind()
 {
-	glUseProgram(m_program);
+	glUseProgram(program);
 }
 
 void Shader::Update(const Transform & transform)
 {
 	glm::mat4 model = transform.GetModel();
 	
-	glUniformMatrix4fv(m_uniforms[TRANFORM_U], 1, GL_FALSE, &model[0][0]);
+	glUniformMatrix4fv(uniforms[TRANFORM_U], 1, GL_FALSE, &model[0][0]);
 }
 
 static GLuint CreateShader(const std::string &text, GLenum shaderType)

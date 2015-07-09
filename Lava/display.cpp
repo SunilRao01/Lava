@@ -16,10 +16,10 @@ Display::Display(int width, int height, const std::string &title)
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 
 	// Create the window
-	m_window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_OPENGL);
+	window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_OPENGL);
 
 	// Create the opengl context
-	m_glContext = SDL_GL_CreateContext(m_window);
+	glContext = SDL_GL_CreateContext(window);
 
 	// Initialize GLEW
 	GLenum status = glewInit();
@@ -28,13 +28,13 @@ Display::Display(int width, int height, const std::string &title)
 		std::cerr << "Glew failed to initialize!";
 	}
 
-	m_isClosed = false;
+	isClosed = false;
 }
 
 Display::~Display()
 {
-	SDL_GL_DeleteContext(m_glContext);
-	SDL_DestroyWindow(m_window);
+	SDL_GL_DeleteContext(glContext);
+	SDL_DestroyWindow(window);
 	SDL_Quit();
 }
 
@@ -46,7 +46,7 @@ void Display::Clear(float r, float g, float b, float a)
 
 bool Display::IsClosed()
 {
-	return m_isClosed;
+	return isClosed;
 }
 
 void Display::Update()
@@ -71,12 +71,12 @@ void Display::Update()
 
 		if (e.type == SDL_QUIT)
 		{
-			m_isClosed = true;
+			isClosed = true;
 		}
 	}
 }
 
 void Display::SwapBuffers()
 {
-	SDL_GL_SwapWindow(m_window);
+	SDL_GL_SwapWindow(window);
 }

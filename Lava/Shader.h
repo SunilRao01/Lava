@@ -31,9 +31,9 @@ private:
 		NUM_UNIFORMS
 	};
 
-	GLuint m_program;
-	GLuint m_shaders[NUM_SHADERS];
-	GLuint m_uniforms[NUM_UNIFORMS];
+	GLuint program;
+	GLuint shaders[NUM_SHADERS];
+	GLuint uniforms[NUM_UNIFORMS];
 };
 
 #endif

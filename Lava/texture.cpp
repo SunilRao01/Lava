@@ -10,8 +10,8 @@ Texture::Texture(const std::string &fileName)
 		std::cerr << "Texture loading failed for file: " << fileName << std::endl;
 	}
 
-	glGenTextures(1, &m_texture);
-	glBindTexture(GL_TEXTURE_2D, m_texture);
+	glGenTextures(1, &texture);
+	glBindTexture(GL_TEXTURE_2D, texture);
 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
@@ -39,8 +39,8 @@ Texture::Texture(const std::string &fileName, int spriteWidth, int spriteHeight,
 		std::cerr << "Texture loading failed for file: " << fileName << std::endl;
 	}
 
-	glGenTextures(1, &m_texture);
-	glBindTexture(GL_TEXTURE_2D, m_texture);
+	glGenTextures(1, &texture);
+	glBindTexture(GL_TEXTURE_2D, texture);
 
 	
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
@@ -66,7 +66,7 @@ void Texture::RenderTexture()
 
 Texture::~Texture()
 {
-	glDeleteTextures(1, &m_texture);
+	glDeleteTextures(1, &texture);
 }
 
 void Texture::Bind(unsigned int unit)
@@ -74,5 +74,5 @@ void Texture::Bind(unsigned int unit)
 	assert(unit >= 0 && unit <= 31);
 	
 	glActiveTexture(GL_TEXTURE0 + unit);
-	glBindTexture(GL_TEXTURE_2D, m_texture);
+	glBindTexture(GL_TEXTURE_2D, texture);
 }

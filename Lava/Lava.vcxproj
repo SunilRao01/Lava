@@ -81,7 +81,7 @@
   <ItemGroup>
     <ClCompile Include="display.cpp" />
     <ClCompile Include="include\stb_image.c" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="demo.cpp" />
     <ClCompile Include="mesh.cpp" />
     <ClCompile Include="shader.cpp" />
     <ClCompile Include="texture.cpp" />

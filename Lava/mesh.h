@@ -43,8 +43,8 @@ private:
 		NUM_BUFFERS
 	};
 
-	GLuint m_vertexArrayObject;
-	GLuint m_vertexArrayBuffers[NUM_BUFFERS];
-	unsigned int m_drawCount;
+	GLuint vertexArrayObject;
+	GLuint vertexArrayBuffers[NUM_BUFFERS];
+	unsigned int drawCount;
 };
 

@@ -23,7 +23,7 @@ private:
 
 	void RenderTexture();
 
-	GLuint m_texture;
+	GLuint texture;
 	bool isSprite;
 };
 
