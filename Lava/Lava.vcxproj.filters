@@ -33,5 +33,6 @@
     <ClInclude Include="shader.h" />
     <ClInclude Include="transform.h" />
     <ClInclude Include="include\stb_image.h" />
+    <ClInclude Include="camera.h" />
   </ItemGroup>
 </Project>

@@ -5,14 +5,23 @@
 #include "mesh.h"
 #include "texture.h"
 #include "transform.h"
+#include "camera.h"
 #include <SDL2\SDL.h>
+
+#define WIDTH 800
+#define HEIGHT 600
 
 int main(int argc, char **argv)
 {
 	std::cout << "Application has started..." << std::endl;
 	
-	Display display(800, 600, "Test");
+	Display display(WIDTH, HEIGHT, "Test");
 
+	/////////////////
+	// 2D Demo///////
+	/////////////////
+
+	
 	// Set up basic diffuse shader for textures
 	Shader shader("./res/basicShader");
 
@@ -34,26 +43,41 @@ int main(int argc, char **argv)
 
 	Transform transform;
 	float counter = 0.0f;
+	
+
+	Camera camera(glm::vec3(0, 0, -3), 70.0f, (float) WIDTH / (float) HEIGHT, 0.01f, 1000.0f);
 
 	while (!display.IsClosed())
 	{
 		display.Clear(0.5f, 0.6f, 0.7f, 1.0f);
 		
+		/////////////////
+		// 2D Demo///////
+		/////////////////
+
+		
 		float sinCounter = sinf(counter);
 		float cosCounter = cosf(counter);
 
 		transform.GetPosition().x = sinCounter;
+		transform.GetPosition().z = cosCounter;
+		
+		transform.GetRotation().x = counter;
+		transform.GetRotation().y = counter;
 		transform.GetRotation().z = counter;
-		transform.SetScale(glm::vec3(cosCounter, cosCounter, cosCounter));
+		//transform.SetScale(glm::vec3(cosCounter, cosCounter, cosCounter));
 
-		shader.Update(transform);
+		shader.Update(transform, camera);
 		shader.Bind();
 
+		// Layer 1
 		twinpeaksTexture.Bind(0);
 		twinpeaksMesh.Draw();
 
+		// Layer 2
 		sonicSprite.Bind(0);
 		sonicMesh.Draw();
+		
 		
 		display.Update();
 		counter += 0.0005f; // By processing speed, use timer in future

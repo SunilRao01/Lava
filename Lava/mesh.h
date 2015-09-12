@@ -40,6 +40,10 @@ private:
 	{
 		POSITION_VB,
 		TEXTURECOORDINATES_VB,
+
+		// 3D
+		//INDEX_VB;
+
 		NUM_BUFFERS
 	};
 
