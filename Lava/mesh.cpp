@@ -1,9 +1,10 @@
 #include "mesh.h"
 #include <vector>
 
-Mesh::Mesh(Vertex *vertices, unsigned int numVertices)
+Mesh::Mesh(Vertex *vertices, unsigned int numVertices, unsigned int *indices, unsigned int numIndices)
 {
-	drawCount = numVertices;
+	//drawCount = numVertices;
+	drawCount = numIndices;
 
 	glGenVertexArrays(1, &vertexArrayObject);
 	glBindVertexArray(vertexArrayObject);
@@ -35,6 +36,10 @@ Mesh::Mesh(Vertex *vertices, unsigned int numVertices)
 	glEnableVertexAttribArray(1);
 	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0 /*Skip pixels*/, 0);
 
+	// Buffer 3
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vertexArrayBuffers[INDEX_VB]);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, numIndices * sizeof(indices[0]), &indices[0], GL_STATIC_DRAW);
+
 	glBindVertexArray(0);
 }
 
@@ -48,6 +53,7 @@ void Mesh::Draw()
 {
 	glBindVertexArray(vertexArrayObject);
 
+	glDrawElements(GL_TRIANGLES, drawCount, GL_UNSIGNED_INT, 0);
 	glDrawArrays(GL_POLYGON, 0, drawCount);
 
 	glBindVertexArray(0);

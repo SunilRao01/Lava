@@ -14,14 +14,15 @@
 int main(int argc, char **argv)
 {
 	std::cout << "Application has started..." << std::endl;
-	
+
 	Display display(WIDTH, HEIGHT, "Test");
 
 	/////////////////
 	// 2D Demo///////
 	/////////////////
 
-	
+	unsigned int indices[] = { 0, 1, 2 };
+
 	// Set up basic diffuse shader for textures
 	Shader shader("./res/basicShader");
 
@@ -30,20 +31,21 @@ int main(int argc, char **argv)
 		Vertex(glm::vec3(-0.5, 0.5, 0), glm::vec2(0.0, 0.0)),
 		Vertex(glm::vec3(0.5, 0.5, 0), glm::vec2(1.0, 0.0)),
 		Vertex(glm::vec3(0.5, -0.5, 0), glm::vec2(1.0, 1.0)) };
-	Mesh twinpeaksMesh(twinpeaksVertices, sizeof(twinpeaksVertices) / sizeof(twinpeaksVertices[0]));
+	Mesh twinpeaksMesh(twinpeaksVertices, sizeof(twinpeaksVertices) / sizeof(twinpeaksVertices[0]), indices, sizeof(indices) / sizeof(indices[0]));
 	Texture twinpeaksTexture("./res/t_twinpeaks.jpg");
+
 
 	// Set up sonic sprite
 	Vertex sonicVertices[] = { Vertex(glm::vec3(-0.05, -0.1, 0), glm::vec2(0.0, 1.0)),
 		Vertex(glm::vec3(-0.05, 0.1, 0), glm::vec2(0.0, 0.0)),
 		Vertex(glm::vec3(0.05, 0.1, 0), glm::vec2(1.0, 0.0)),
 		Vertex(glm::vec3(0.05, -0.1, 0), glm::vec2(1.0, 1.0)) };
-	Mesh sonicMesh(sonicVertices, sizeof(sonicVertices) / sizeof(sonicVertices[0]));
+	Mesh sonicMesh(sonicVertices, sizeof(sonicVertices) / sizeof(sonicVertices[0]), indices, sizeof(indices) / sizeof(indices[0]));
 	Texture sonicSprite("./res/s_sonic.png", 5, 20, glm::vec3(0.0, 0.0, 0.0));
 
 	Transform transform;
 	float counter = 0.0f;
-	
+
 
 	Camera camera(glm::vec3(0, 0, -3), 70.0f, (float) WIDTH / (float) HEIGHT, 0.01f, 1000.0f);
 
